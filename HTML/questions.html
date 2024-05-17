@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question</title>
+    <link rel="stylesheet" href="../CSS/questions.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/question.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="questionId" class="question-box" >
+            <div class="header">
+                <div>
+                    <p class="questionNumber-prefix">Question : </p>
+                    <div class="questionNumber">1</div>
+                </div>
+                <div class="timer">30</div>
+            </div>
+
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h2 class="questionHeading">
+                What is the answer to this question ?
+            </h2>
+            
+            <div class="choice-container" id="choiceContainer"></div>
+
+            <div class="option-warning" hidden>Select an option</div>
+
+            <div class="button-container">
+                <button class="next">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
