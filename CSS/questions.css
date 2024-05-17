@@ -70,7 +70,12 @@
     background-color: #854ddc;
     border-radius: 5px;
     color: white;
-    height:50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 .choice:hover{
     cursor: pointer;

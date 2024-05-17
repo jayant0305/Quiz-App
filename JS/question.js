@@ -94,13 +94,15 @@ function showQuestion() {
     const options = question.options;
 
     options.forEach((option, index) => {
-        const choice = document.createElement('div');
+        const choice = document.createElement('label');
+        choice.for=`option-${index}`;
         choice.classList.add('choice');
 
         const input = document.createElement('input');
         input.type = 'radio';
         input.name = 'option';
         input.value = index;
+        input.id = `option-${index}`;
         input.classList.add('choice-input');
 
         const text = document.createElement('div');
