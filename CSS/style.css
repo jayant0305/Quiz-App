@@ -69,7 +69,7 @@ h2{
     position: absolute;
     top: 50%;
     left: 50%; 
-    width: 540px;
+    width: 560px;
     background:white;
     border-radius: 5px;
     border:2px solid purple;
@@ -97,7 +97,8 @@ h2{
   
 .info-list .info {
     margin: 5px 0;
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 25px;
   }
   
 .info-list .info span {

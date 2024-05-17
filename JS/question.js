@@ -61,7 +61,7 @@ const questionData = [
 
 
 let currentQuestion = 0;
-let maxTimerCounter = 10;
+let maxTimerCounter = 15;
 let score = 0;
 let timerInterval;
 let answers=[];
