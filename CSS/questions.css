@@ -91,6 +91,7 @@
 }
 .choice-text{
     display: inline-block;
+    font-size:24px;
 }
 .correct{
     background-color: green;
