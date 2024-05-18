@@ -3,68 +3,68 @@ const timer = document.querySelector(".timer");
 const questionHeading = document.querySelector(".questionHeading");
 const choiceContainer = document.querySelector(".choice-container");
 const optionWarning = document.querySelector(".option-warning");
-const progressBar= document.getElementById("progress-bar");
-
+const progressBar = document.getElementById("progress-bar");
 const nextButton = document.querySelector(".next");
+const secret = "quiz-app";
+
 const questionData = [
     {
         question: "Is the Earth flat?",
         options: ["True", "False"],
-        answer: "False"
+        answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
         question: "Is JavaScript a programming language?",
         options: ["True", "False"],
-        answer: "True"
+        answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
         question: "Is Paris the capital of France?",
         options: ["True", "False"],
-        answer: "True"
+        answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
         question: "Is the sun a planet?",
         options: ["True", "False"],
-        answer: "False"
+        answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
         question: "Is 2 + 2 equal to 5?",
         options: ["True", "False"],
-        answer: "False"
+        answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
         question: "What does CSS stand for?",
         options: ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"],
-        answer: "Cascading Style Sheets"
+        answer: CryptoJS.AES.encrypt("Cascading Style Sheets", secret).toString()
     },
     {
         question: "Which of the following is a programming language?",
         options: ["HTML", "CSS", "JavaScript", "JSON"],
-        answer: "JavaScript"
+        answer: CryptoJS.AES.encrypt("JavaScript", secret).toString()
     },
     {
         question: "Who is the CEO of Tesla?",
         options: ["Elon Musk", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
-        answer: "Elon Musk"
+        answer: CryptoJS.AES.encrypt("Elon Musk", secret).toString()
     },
     {
         question: "Which animal is known as the 'King of the Jungle'?",
         options: ["Tiger", "Lion", "Elephant", "Giraffe"],
-        answer: "Lion"
+        answer: CryptoJS.AES.encrypt("Lion", secret).toString()
     },
     {
         question: "What is the capital city of Japan?",
         options: ["Beijing", "Tokyo", "Seoul", "Shanghai"],
-        answer: "Tokyo"
+        answer: CryptoJS.AES.encrypt("Tokyo", secret).toString()
     }
 ];
-
 
 let currentQuestion = 0;
 let maxTimerCounter = 15;
 let score = 0;
 let timerInterval;
-let answers=[];
+let answers = [];
 
 nextButton.addEventListener("click", (e) => {
     const inputSelector = document.querySelector('input[name="option"]:checked');
@@ -95,7 +95,7 @@ function showQuestion() {
 
     options.forEach((option, index) => {
         const choice = document.createElement('label');
-        choice.for=`option-${index}`;
+        choice.setAttribute('for', `option-${index}`);
         choice.classList.add('choice');
 
         const input = document.createElement('input');
@@ -143,31 +143,19 @@ function resetTimer() {
 }
 
 function updateScore(selectedValue) {
-    if (selectedValue != null && questionData[currentQuestion].options[selectedValue] === questionData[currentQuestion].answer) {
+    const encryptedAnswer = questionData[currentQuestion].answer;
+    const decryptedAnswer = CryptoJS.AES.decrypt(encryptedAnswer, secret).toString(CryptoJS.enc.Utf8);
+    console.log(decryptedAnswer);
+    if (selectedValue != null && questionData[currentQuestion].options[selectedValue] === decryptedAnswer) {
         score += 10;
-        const answerData ={
-            question:questionData[currentQuestion].question,
-            selected:questionData[currentQuestion].options[selectedValue],
-            answer:questionData[currentQuestion].answer,
-        }
-        answers.push(answerData );
     }
-    else if(selectedValue != null && questionData[currentQuestion].options[selectedValue] !== questionData[currentQuestion].answer){
-        const answerData ={
-            question:questionData[currentQuestion].question,
-            selected:questionData[currentQuestion].options[selectedValue],
-            answer:questionData[currentQuestion].answer,
-        }
-        answers.push(answerData );
-    }
-    else {
-        const answerData ={
-            question:questionData[currentQuestion].question,
-            selected:"Not Selected",
-            answer:questionData[currentQuestion].answer,
-        }
-        answers.push(answerData );
-    }
+    
+    const answerData = {
+        question: questionData[currentQuestion].question,
+        selected: selectedValue != null ? questionData[currentQuestion].options[selectedValue] : "Not Selected",
+        answer: decryptedAnswer
+    };
+    answers.push(answerData);
 }
 
 function updateProgressBar() {
@@ -177,7 +165,7 @@ function updateProgressBar() {
 
 function endQuiz() {
     clearInterval(timerInterval);
-    localStorage.setItem("score",score);
+    localStorage.setItem("score", score);
     localStorage.setItem("answers", JSON.stringify(answers));
     window.location.assign('../HTML/score.html');
 }
