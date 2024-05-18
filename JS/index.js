@@ -1,4 +1,4 @@
-const startButton = document.querySelector(".startButton");
+const startButton = document.querySelector(".start-button");
 const quit=document.querySelector(".quit");
 const infoBox = document.querySelector(".instruction-box");
 const continueButton=document.querySelector(".continue");

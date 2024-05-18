@@ -82,7 +82,7 @@
     color: #854ddc;
     background-color: white;
     border: 3px solid #854ddc;
-    font-weight:400
+    font-weight:400;
 }
 .choice-input{
     display: inline-block;
@@ -91,7 +91,6 @@
 }
 .choice-text{
     display: inline-block;
-    font-size: 20px;
 }
 .correct{
     background-color: green;
@@ -106,22 +105,26 @@
     color: red;
     font-weight:bold;
 }
-.next {
-    color: white;
-    background-color: #854ddc;
-    font-size: 20px;
-    height: 50px;
-    width: 100px;
-    border-radius: 7px;
-    text-align: center;
-    padding: 6px;
-}
 .button-container {
     display: flex;
     justify-content:center;
     margin-top: 10px;
     margin-left: 85%;
 }
+.next {
+    color: white;
+    background-color: #854ddc;
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    border-radius: 7px ;
+    text-align: center;
+    padding: 6px;
+}
+.next:hover{
+    background-color: #a020f0;
+}
+
 
 @media screen and (max-width: 768px) {
     .question-box{

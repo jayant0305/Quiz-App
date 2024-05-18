@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #854ddc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    width: 50vw;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #854ddc;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.full-width {
+    display: unset;
+    flex-direction: unset;
+    align-items: unset;
+
+}
+.update-body{
+    height: unset;
+}
+
+.score-card h1 {
+    margin-bottom: 20px;
+}
+
+.score-card p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.answer-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.answer-section h2 {
+    margin-bottom: 10px;
+}
+
+#answers {
+    width: 100%;
+    text-align: left;
+}
+
+.answer-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    color: #854ddc;
+}
+
+.show-answer, .restart ,.exit {
+    background-color: #854ddc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    margin: 10px;
+}
+
+.show-answer:hover, .restart:hover , .exit:hover{
+    background-color: #a020f0;
+}
+
+p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 18px;
+}

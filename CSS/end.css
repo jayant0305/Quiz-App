@@ -1,90 +1,49 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background-color: #854ddc;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    margin: 0;
+    background-color: #854ddc;
 }
 
 .container {
-    width: 50vw;
-    background-color: white;
+    background: #fff;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:20%;
+}
+
+.text {
+    margin-bottom: 20px;
+}
+
+.profiles {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #854ddc;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.full-width {
-    display: unset;
-    flex-direction: unset;
-    align-items: unset;
-
-}
-.update-body{
-    height: unset;
-}
-
-.score-card h1 {
-    margin-bottom: 20px;
-}
-
-.score-card p {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.answer-section {
     width: 100%;
-    margin-top: 20px;
 }
 
-.answer-section h2 {
-    margin-bottom: 10px;
-}
-
-#answers {
-    width: 100%;
-    text-align: left;
-}
-
-.answer-item {
-    margin-bottom: 10px;
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
     padding: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
+    background-color:#854ddc;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+    text-decoration: none;
+}
+.profile:hover{
     color: #854ddc;
+    background-color: white;
+    border: 2px solid #854ddc;
+    font-weight: 500;
 }
 
-.show-answer, .restart {
-    background-color: #854ddc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 17px;
-    margin: 10px;
-}
-
-.show-answer:hover, .restart:hover {
-    background-color: #a020f0;
-}
-
-p {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    line-height: 18px;
-}

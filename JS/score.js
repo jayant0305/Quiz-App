@@ -6,6 +6,7 @@ const answerSection=document.querySelector(".answer-section");
 const answers = JSON.parse(localStorage.getItem('answers'));
 const container = document.querySelector('.container');
 const body = document.querySelector('body');
+const exit=document.querySelector('.exit');
 
 let isShowed=false;
 restartButton.addEventListener("click" ,()=>{
@@ -27,10 +28,12 @@ showAnswer.addEventListener("click",()=>{
     container.classList.add('full-width');
     body.classList.add('update-body');
 })
+
+exit.addEventListener("click", ()=>{
+    window.location.assign('./end.html')
+})
 function score(){
     console.log(window.localStorage.getItem('score'))
     scoreText.innerText = window.localStorage.getItem('score');
 }
-
-
 score();

@@ -179,7 +179,7 @@ function endQuiz() {
     clearInterval(timerInterval);
     localStorage.setItem("score",score);
     localStorage.setItem("answers", JSON.stringify(answers));
-    window.location.assign('../HTML/end.html');
+    window.location.assign('../HTML/score.html');
 }
 
 function start() {
