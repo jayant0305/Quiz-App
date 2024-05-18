@@ -120,6 +120,7 @@ function setTimer() {
     let time = maxTimerCounter;
     timerInterval = setInterval(() => {
         if (time <= 0) {
+            timer.innerText = time;
             clearInterval(timerInterval);
             updateScore(null);  // Treat as incorrect answer
             currentQuestion++;
