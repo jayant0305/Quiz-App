@@ -145,7 +145,6 @@ function resetTimer() {
 function updateScore(selectedValue) {
     const encryptedAnswer = questionData[currentQuestion].answer;
     const decryptedAnswer = CryptoJS.AES.decrypt(encryptedAnswer, secret).toString(CryptoJS.enc.Utf8);
-    console.log(decryptedAnswer);
     if (selectedValue != null && questionData[currentQuestion].options[selectedValue] === decryptedAnswer) {
         score += 10;
     }
