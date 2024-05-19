@@ -9,56 +9,59 @@ const secret = "quiz-app";
 
 const questionData = [
     {
-        question: "Is the Earth flat?",
-        options: ["True", "False"],
-        answer: CryptoJS.AES.encrypt("False", secret).toString()
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Text Machine Language"],
+        answer: CryptoJS.AES.encrypt("Hyper Text Markup Language", secret).toString()
     },
     {
-        question: "Is JavaScript a programming language?",
+        question: "What is the correct HTML element for the largest heading?",
+        options: ["<h1>", "<head>", "<heading>", "<h6>"],
+        answer: CryptoJS.AES.encrypt("<h1>", secret).toString()
+    },
+    {
+        question: "Is JavaScript case-sensitive?",
         options: ["True", "False"],
         answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
-        question: "Is Paris the capital of France?",
+        question: "Which CSS property is used to change the background color?",
+        options: ["background-color", "color", "bgcolor", "background"],
+        answer: CryptoJS.AES.encrypt("background-color", secret).toString()
+    },
+    ,
+    {
+        question: "Does CSS stand for 'Cascading Style Sheets'?",
         options: ["True", "False"],
         answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
-        question: "Is the sun a planet?",
+        question: "Which is the correct CSS syntax?",
+        options: ["body {color: black;}", "{body;color:black;}", "body:color=black;", "{body:color=black;}"],
+        answer: CryptoJS.AES.encrypt("body {color: black;}", secret).toString()
+    },
+    {
+        question: "Is HTML a programming language?",
         options: ["True", "False"],
         answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
-        question: "Is 2 + 2 equal to 5?",
+        question: "Is CSS used to style web pages?",
         options: ["True", "False"],
-        answer: CryptoJS.AES.encrypt("False", secret).toString()
+        answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
-        question: "What does CSS stand for?",
-        options: ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"],
-        answer: CryptoJS.AES.encrypt("Cascading Style Sheets", secret).toString()
+        question: "How do you add a background color for all <h1> elements?",
+        options: ["h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF;}", "all.h1 {background-color:#FFFFFF;}", "h1 {bgcolor:#FFFFFF;}"],
+        answer: CryptoJS.AES.encrypt("h1 {background-color:#FFFFFF;}", secret).toString()
     },
+    
     {
-        question: "Which of the following is a programming language?",
-        options: ["HTML", "CSS", "JavaScript", "JSON"],
-        answer: CryptoJS.AES.encrypt("JavaScript", secret).toString()
-    },
-    {
-        question: "Who is the CEO of Tesla?",
-        options: ["Elon Musk", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
-        answer: CryptoJS.AES.encrypt("Elon Musk", secret).toString()
-    },
-    {
-        question: "Which animal is known as the 'King of the Jungle'?",
-        options: ["Tiger", "Lion", "Elephant", "Giraffe"],
-        answer: CryptoJS.AES.encrypt("Lion", secret).toString()
-    },
-    {
-        question: "What is the capital city of Japan?",
-        options: ["Beijing", "Tokyo", "Seoul", "Shanghai"],
-        answer: CryptoJS.AES.encrypt("Tokyo", secret).toString()
+        question: "Is HTML5 the latest version of HTML?",
+        options: ["True", "False"],
+        answer: CryptoJS.AES.encrypt("True", secret).toString()
     }
 ];
+
 
 let currentQuestion = 0;
 let maxTimerCounter = 15;
@@ -172,6 +175,7 @@ function endQuiz() {
 
 function start() {
     localStorage.clear();
+        shuffleQuestion();
     showQuestion();
     setTimer();
 }
