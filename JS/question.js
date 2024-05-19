@@ -28,7 +28,6 @@ const questionData = [
         options: ["background-color", "color", "bgcolor", "background"],
         answer: CryptoJS.AES.encrypt("background-color", secret).toString()
     },
-    ,
     {
         question: "Does CSS stand for 'Cascading Style Sheets'?",
         options: ["True", "False"],
@@ -54,7 +53,6 @@ const questionData = [
         options: ["h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF;}", "all.h1 {background-color:#FFFFFF;}", "h1 {bgcolor:#FFFFFF;}"],
         answer: CryptoJS.AES.encrypt("h1 {background-color:#FFFFFF;}", secret).toString()
     },
-    
     {
         question: "Is HTML5 the latest version of HTML?",
         options: ["True", "False"],
