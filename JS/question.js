@@ -14,9 +14,9 @@ const questionData = [
         answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
-        question: "What is the correct HTML element for the largest heading?",
-        options: ["<h1>", "<head>", "<heading>", "<h6>"],
-        answer: CryptoJS.AES.encrypt("<h1>", secret).toString()
+        question: "Javascript is an _______ language?",
+        options: ["Object-Oriented", "Object-Based", "Procedural", "None of these"],
+        answer: CryptoJS.AES.encrypt("Object-Oriented", secret).toString()
     },
     {
         question: "Is JavaScript case-sensitive?",
