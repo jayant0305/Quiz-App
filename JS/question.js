@@ -39,9 +39,9 @@ const questionData = [
         answer: CryptoJS.AES.encrypt("body {color: black;}", secret).toString()
     },
     {
-        question: "Is HTML a programming language?",
-        options: ["True", "False"],
-        answer: CryptoJS.AES.encrypt("False", secret).toString()
+        question: "Which function is used to serialize an object into a JSON string in Javascript?",
+        options: ["stringify()", "parse()","convert()","None of these"],
+        answer: CryptoJS.AES.encrypt("stringify()", secret).toString()
     },
     {
         question: "Is CSS used to style web pages?",
@@ -49,9 +49,9 @@ const questionData = [
         answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
-        question: "Is 2 + 2 equal to 5?",
-        options: ["True", "False"],
-        answer: CryptoJS.AES.encrypt("False", secret).toString()
+        question: "How can a datatype be declared to be a constant type?",
+        options: ["const", "var","let","constant"],
+        answer: CryptoJS.AES.encrypt("const", secret).toString()
     },
     {
         question: "Is HTML5 the latest version of HTML?",
