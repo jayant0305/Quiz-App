@@ -173,7 +173,6 @@ function endQuiz() {
 
 function start() {
     localStorage.clear();
-        shuffleQuestion();
     showQuestion();
     setTimer();
 }
