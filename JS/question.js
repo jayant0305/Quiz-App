@@ -9,9 +9,9 @@ const secret = "quiz-app";
 
 const questionData = [
     {
-        question: "What does HTML stand for?",
-        options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Text Machine Language"],
-        answer: CryptoJS.AES.encrypt("Hyper Text Markup Language", secret).toString()
+        question: "A function must return a value in Javascript?",
+        options: ["True", "False"],
+        answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
         question: "What is the correct HTML element for the largest heading?",
@@ -49,9 +49,9 @@ const questionData = [
         answer: CryptoJS.AES.encrypt("True", secret).toString()
     },
     {
-        question: "How do you add a background color for all <h1> elements?",
-        options: ["h1 {background-color:#FFFFFF;}", "h1.all {background-color:#FFFFFF;}", "all.h1 {background-color:#FFFFFF;}", "h1 {bgcolor:#FFFFFF;}"],
-        answer: CryptoJS.AES.encrypt("h1 {background-color:#FFFFFF;}", secret).toString()
+        question: "Is 2 + 2 equal to 5?",
+        options: ["True", "False"],
+        answer: CryptoJS.AES.encrypt("False", secret).toString()
     },
     {
         question: "Is HTML5 the latest version of HTML?",
